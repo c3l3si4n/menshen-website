@@ -19,7 +19,5 @@ const router = new Router({
 new Vue({
     el: '#app',
     router,
-
-    // replace the content of <div id="app"></div> with App
     render: h => h(App)
 })
