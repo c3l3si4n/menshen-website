@@ -5,11 +5,13 @@ Vue.use(Router)
 
 
 import Login from './components/LoginPage.vue'
+import Register from './components/RegisterPage.vue'
 import App from './App.vue'
 const router = new Router({
 
     routes: [
-        { path: '/login', component: Login }
+        { path: '/login', component: Login },
+        { path: '/register', component: Register }
     ]
 })
 

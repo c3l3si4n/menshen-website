@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <section class="hero is-primary is-fullheight  has-bg-img ">
-      <div class="hero-body" id="loginForm">
+      <div class="hero-body" id="registerForm">
         <div class="container">
           <div class="columns is-vcentered">
             <div class="column">
@@ -9,13 +9,13 @@
                 Menshen
               </h1>
               <h2 class="subtitle">
-                Login
+                Register
               </h2>
             </div>
             <div class="column ">
-              <form action="" @submit.prevent="login">
+              <form action="" @submit.prevent="register">
                 <div class="field">
-                  <label class="label">Email</label>
+                <label class="label">Email</label>
 
                   <div class="control has-icons-left">
                     <input
@@ -31,17 +31,36 @@
                     </span>
                   </div>
                 </div>
+
                 <div class="field">
-                  <label class="label">Password</label>
+                                      <label class="label">Password</label>
 
                   <div class="control has-icons-left">
                     <input
                       class="input"
                       type="password"
                       name="password"
+                      
                       v-model="inputPassword"
                       id="password"
                       placeholder="Password"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                                      <label class="label">Confirm your password</label>
+
+                  <div class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="password"
+                      name="passwordConfirm"
+                      v-model="inputPasswordConfirm"
+                      id="passwordConfirm"
+                      placeholder="Confirm your password"
                     />
                     <span class="icon is-small is-left">
                       <i class="fa fa-lock"></i>
@@ -54,16 +73,15 @@
                     class="button is-primary
                                         is-pulled-right"
                   >
-                    Login
+                    Register
                   </button>
 
-                  <router-link to="/register">
-                    <button
-                      class="button is-text
+                 <router-link to="/login"> <button
+                    class="button is-text
                                         is-pulled-right"
-                    >
-                      Not a customer yet?
-                    </button>
+                  >
+                    Already have an account?
+                  </button>
                   </router-link>
                 </div>
               </form>
@@ -77,12 +95,18 @@
 
 <script>
 export default {
-  name: "loginPage",
+  name: "registerPage",
   data() {
     return {
       inputEmail: "",
-      inputPassword: ""
+      inputPassword: "",
+      inputPasswordConfirm: ""
     };
+  },
+  methods: {
+    register: function() {
+      alert("registered");
+    }
   }
 };
 </script>
