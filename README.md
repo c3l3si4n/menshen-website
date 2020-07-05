@@ -1,5 +1,8 @@
 # menshen
 
+Sample website made in Vue.JS
+
+
 ## Project setup
 ```
 yarn install
